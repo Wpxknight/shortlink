@@ -3,7 +3,9 @@ package com.fengjie.shortlink.admin.dto.resp;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fengjie.shortlink.admin.common.serialize.IdCardDesensitizationSerializer;
 import com.fengjie.shortlink.admin.common.serialize.PhoneDesensitizationSerializer;
+import lombok.Data;
 
+@Data
 public class UserRespDTO {
 
     /**
