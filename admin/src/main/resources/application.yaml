@@ -1,5 +1,5 @@
 server:
-  port: 8002
+  port: 8000
 spring:
   application:
     name: short-link-admin
@@ -12,5 +12,19 @@ spring:
     redis:
       host: 127.0.0.1
       port: 6379
-      password: 1234
+  cloud:
+    nacos:
+      discovery:
+        enabled: false     # 关闭服务发现/注册
+      config:
+        enabled: false     # 关闭 Nacos 配置中心（如果被引入）
+    # 通用开关：禁用自动注册（不管底层是 Nacos / Consul）
+    discovery:
+      enabled: false
+    # 彻底不向服务注册中心注册（Spring Cloud Commons）
+    main:
+      cloud-platform: none
+    service-registry:
+      auto-registration:
+        enabled: false
 
