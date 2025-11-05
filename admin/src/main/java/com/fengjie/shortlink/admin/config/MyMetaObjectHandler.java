@@ -2,9 +2,13 @@ package com.fengjie.shortlink.admin.config;
 
 import com.baomidou.mybatisplus.core.handlers.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
 
 import java.util.Date;
 
+@Primary
+@Component(value = "myMetaObjectHandlerByAdmin")
 public class MyMetaObjectHandler implements MetaObjectHandler {
 
     @Override
@@ -16,6 +20,6 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
 
     @Override
     public void updateFill(MetaObject metaObject) {
-        strictInsertFill(metaObject, "updateTime", Date::new, Date.class);
+        strictUpdateFill(metaObject, "updateTime", Date::new, Date.class);
     }
 }
