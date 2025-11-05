@@ -29,7 +29,7 @@ rules:
         type: HASH_MOD
         # 分片数量
         props:
-          sharding-count: 16
+          sharding-count: 1
   - !ENCRYPT
     tables:
       t_user:
